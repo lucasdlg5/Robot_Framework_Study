@@ -34,6 +34,6 @@ Cenário 02: Pesquisar produto não existente
     Acessar página home do site
     Digitar o nome de produto "produtoNãoExistente" no campo de pesquisa
     Clicar no botão de pesquisa
-    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente""
+    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente"" 
 
 #*** Keywords ***
