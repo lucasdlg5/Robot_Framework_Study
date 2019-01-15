@@ -1,6 +1,6 @@
 #Este e a IMPLEMETAÇÃO das Keywords, não terá TESTES
 
-#Comando para rodar: robot -d ./results tests\TestSitePractice.robot
+#Comando para rodar especificado local para os resultados: robot -d ./results tests\TestSitePractice.robot
 
 #Padrao
 #robot tests\TestSitePractice.robot
@@ -27,7 +27,7 @@ ${BROWSER}  chrome
 ### Setup e Teardown
 #As palavas do Keyword aqui foram definidas nos arquivos de tese
 Abrir Navegador
-    Open Browser    ${URL}  ${BROWSER}
+    Open Browser    about:blank  ${BROWSER}
 
 Fechar Navegador
     Close Browser  
