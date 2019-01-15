@@ -30,9 +30,10 @@ Cenário 01: Pesquisar produto Existente
     Então o produto "Blouse" deve ser listado na página de resultado da busca
 
 
-#Cenário 02: Pesquisar produto não existente
-#    Dado que estou na página home do site
-#    Quando eu pesquisar pelo produto "produtoNãoExistente"
-#    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente""
-#
+Cenário 02: Pesquisar produto não existente
+    Acessar página home do site
+    Digitar o nome de produto "produtoNãoExistente" no campo de pesquisa
+    Clicar no botão de pesquisa
+    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente""
+
 #*** Keywords ***

@@ -1,5 +1,8 @@
 #Este e a IMPLEMETAÇÃO das Keywords, não terá TESTES
 
+#Comando para rodar: robot -d ./results tests\TestSitePractice.robot
+#robot tests\TestSitePractice.robot
+
 *** Settings ***
 Library     SeleniumLibrary
 
@@ -42,3 +45,9 @@ Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
     #//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]
     #[contains(text(),"${PRODUTO}")] -- Faz uma consulta se contém um nome com o texxto de "Blouse" sobre o item selecionado
     Page Should Contain Link    xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]
+
+Então a página deve exibir a mensagem "No results were found for your search "${PRODUTO}""
+    #Colocar uma espera para que a pagina carrege antes para que prossiga com os testes
+    Wait until Element Is Visible   css=#center_column > h1
+    Title Should Be     Search - My Store
+    Wait Until Page Contains Element  xpath=//*[@id="center_column"]//p[contains(text(),"${PRODUTO}")]
