@@ -43,7 +43,7 @@ Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
 Clicar no botão de pesquisa
     Click Element   name=submit_search
 
-Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
+Conferir o produto "${PRODUTO}" foi listado no site
     #Colocar uma espera para que a pagina carrege antes para que prossiga com os testes
     Wait until Element Is Visible   css=#center_column > h1
     Title Should Be     Search - My Store
@@ -65,7 +65,7 @@ Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
 #    Title Should Be     Search - My Store
 #    Wait Until Page Contains Element  xpath=//*[@id="center_column"]//p[contains(text(),"${PRODUTO}")]
 
-Então a página deve exibir a mensagem "${MENSAGEM_ALERTA}" 
+O sistema deve exibir a mensagem "${MENSAGEM_ALERTA}" 
     #Colocar uma espera para que a pagina carrege antes para que prossiga com os testes
     Wait until Element Is Visible    xpath=//*[@id="center_column"]//p[@class='alert alert-warning']
     Element Text Should Be  xpath=//*[@id="center_column"]//p[@class='alert alert-warning']  ${MENSAGEM_ALERTA}

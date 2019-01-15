@@ -27,13 +27,13 @@ Cenário 01: Pesquisar produto Existente
     Acessar página home do site
     Digitar o nome de produto "Blouse" no campo de pesquisa
     Clicar no botão de pesquisa
-    Então o produto "Blouse" deve ser listado na página de resultado da busca
+    Conferir o produto "Blouse" foi listado no site
 
 
 Cenário 02: Pesquisar produto não existente
     Acessar página home do site
     Digitar o nome de produto "produtoNãoExistente" no campo de pesquisa
     Clicar no botão de pesquisa
-    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente"" 
+    O sistema deve exibir a mensagem "No results were found for your search "produtoNãoExistente"" 
 
 #*** Keywords ***

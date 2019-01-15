@@ -18,19 +18,29 @@ Test Teardown       Fechar Navegador
 
 *** Test Case ***
 Caso de Teste 01: Pesquisar produto Existente
-    Acessar página home do site
-    Página home deve ser exibida
-    Digitar o nome de produto "Blouse" no campo de pesquisa
-    Clicar no botão de pesquisa
-    O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado
-
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "Blouse"
+    Então o produto "Blouse" deve ser listado na página de resultado da busca
 
 Caso de Teste 02: Pesquisar produto não existente
-    Acessar página home do site
-    Página home deve ser exibida
-    Digitar o nome de produto "produtoNãoExistente" no campo de pesquisa.
-    Clicar no botão de pesquisa
-    Conferir mensarem de erro "No results were found for your search "produtoNãoExistente""
-
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "produtoNãoExistente"
+    Então a página deve exibir a mensagem "No results were found for your search "produtoNãoExistente""
 
 *** Keywords ***
+#REUTILIZANDO AS KEYWORDS JA CRIADAS
+
+#A FORMA ABAIXO PODEMOS REFERENCIAR AS KEYWORDS DO TESTE COM A RESOURCE
+Dado que estou na página home do site
+    Acessar página home do site
+
+Quando eu pesquisar pelo produto "${PRODUTO}"
+    Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Clicar no botão de pesquisa
+
+Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
+    Conferir o produto "${PRODUTO}" foi listado no site
+
+Então a página deve exibir a mensagem "${MENSAGEM_ALERTA}"
+    O sistema deve exibir a mensagem "${MENSAGEM_ALERTA}" 
+
