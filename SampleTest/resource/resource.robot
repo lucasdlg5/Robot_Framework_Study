@@ -26,5 +26,13 @@ Fechar Aplicacao
 Checar imagem logotipo
     Wait Until Element Is Visible   id=txt_username
 
-Digitar login
+Digitar login e senha
     Input Text  id=txt_username   lucasdlg
+    Input Text  id=txt_password   lucasdlg
+
+Clicar no botão para logar
+    Click Element   xpath=	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.view.ViewGroup
+    Click Button    btn_login
+
+Verificar pos-login
+    Wait Until Element Is Visible   id=TextView

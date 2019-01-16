@@ -8,8 +8,12 @@ Test Teardown       Fechar Aplicacao
 
 ***Test Cases
 Test Case 01
-#    Abrir pagina de login
     Checar imagem logotipo
-    Digitar login
+    Digitar login e senha
+    Clicar no botão para logar
+    #Verificar se há conteudo na proxima tela
 
 ***Keywords
+
+Verificar se há conteudo na proxima tela
+    Verificar pos-login

@@ -24,19 +24,23 @@ Library     AppiumLibrary
 
 ${APK}      C:/Users/ldgomes/Desktop/Projetos/Robot_Framework_Study/Roche_Test_Appium/APK/roche.apk
 #${DEVICE_NAME}      Pixel_2_API_24_Nougat_7.0
+#celular cadu
 #${DEVICE_NAME}      e31fd004
-${DEVICE_NAME}      Moto_G__5S__Plus
+#celular lucas
+# ${DEVICE_NAME}      H7AZB602F881PR5  
+# ${DEVICE_NAME}      Moto_G__5S__Plus
 ${SERVER}   127.0.0.1:4723/wd/hub
 ${APP_NAME}     Roche Casos Clinicos
 #${APP_NAME}     rocheapp
 
+#autoWebview    true
 
 
 
 *** Keywords ***
 
 Abrir Aplicacao
-    Open Application     ${SERVER}  platformName=Android    deviceName=${DEVICE_NAME}   app=${APK}
+    Open Application     ${SERVER}  platformName=Android    deviceName=${DEVICE_NAME}   app=${APK}  autoWebview=true
 
 Fechar Aplicacao
     Close Application  
