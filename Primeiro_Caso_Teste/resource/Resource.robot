@@ -69,3 +69,16 @@ O sistema deve exibir a mensagem "${MENSAGEM_ALERTA}"
     #Colocar uma espera para que a pagina carrege antes para que prossiga com os testes
     Wait until Element Is Visible    xpath=//*[@id="center_column"]//p[@class='alert alert-warning']
     Element Text Should Be  xpath=//*[@id="center_column"]//p[@class='alert alert-warning']  ${MENSAGEM_ALERTA}
+
+Click botao "${TEXTO_BOTAO}"
+    Page Should Contain Element   ${TEXTO_BOTAO}
+    Click Button ${TEXTO_BOTAO}
+
+Uma tela de confirmação deve ser exibida
+    Wait until Element Is Visible   name=layer_cart
+    Page Should Contain Image       xpath=//*[@id="layer_cart"]//img[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]
+    Page Should Contain Button      xpath=//*[@id="layer_cart"]//span[contains(text(),"Proceed to checkout")]
+
+Tela Carrinho
+    Wait until Element Is Visible  name=cart_title
+    Page should contain Element     xpath=//*[@id="cart_title"]/text()
