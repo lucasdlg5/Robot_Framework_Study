@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.0 on win32)" generated="20190116 13:44:31.160" rpa="false">
-<suite id="s1" name="Test" source="C:\Users\ldgomes\Desktop\Projetos\Robot_Framework_Study\Roche_Test_Appium\tests\test.robot">
+<robot generator="Robot 3.1.1 (Python 3.7.1 on win32)" generated="20190117 08:49:39.547" rpa="false">
+<suite id="s1" name="Test" source="C:\Users\LUCASDOMINGOSLEAOGOM\Desktop\Projetos\Robot_Framework_Study\Roche_Test_Appium\tests\test.robot">
 <test id="s1-t1" name="Test Case 01">
 <kw name="Abrir Aplicacao" library="resource" type="setup">
 <kw name="Open Application" library="AppiumLibrary">
@@ -15,39 +15,54 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>platformName=Android</arg>
 <arg>deviceName=${DEVICE_NAME}</arg>
 <arg>app=${APK}</arg>
+<arg>autoWebview=true</arg>
 </arguments>
-<msg timestamp="20190116 13:44:45.302" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C\:\\Users\\ldgomes\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s H7AZB602F881PR5 install C\:/Users/ldgomes/Desktop/Projetos/Robot_Framework_Study/Roche_Test_Appium/APK/roche.apk' exited with code 1'; Stderr: 'adb: failed to install C:/Users/ldgomes/Desktop/Projetos/Robot_Framework_Study/Roche_Test_Appium/APK/roche.apk: Failure [INSTALL_FAILED_CONFLICTING_PROVIDER: Package couldn't be installed in /data/app/br.com.roche.casosclinicos-dPAydFUdPxTrYsSCwdrwOw==: Can't install because provider name com.roche.stf.DocumentViewerPlugin.fileprovider (in package br.com.roche.casosclinicos) is already used by com.roche.stf]'; Code: '1'
-</msg>
-<status status="FAIL" starttime="20190116 13:44:34.000" endtime="20190116 13:44:45.302"></status>
+<status status="PASS" starttime="20190117 08:49:41.569" endtime="20190117 08:50:05.236"></status>
 </kw>
-<status status="FAIL" starttime="20190116 13:44:33.999" endtime="20190116 13:44:45.303"></status>
+<status status="PASS" starttime="20190117 08:49:41.569" endtime="20190117 08:50:05.237"></status>
+</kw>
+<kw name="Checar imagem logotipo" library="resource">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=/html/body/ion-app/ng-component/ion-nav/page-login/ion-content/div[2]/div[1]/ion-grid/ion-row[1]/ion-col/img</arg>
+</arguments>
+<status status="PASS" starttime="20190117 08:50:05.239" endtime="20190117 08:50:05.635"></status>
+</kw>
+<status status="PASS" starttime="20190117 08:50:05.238" endtime="20190117 08:50:05.635"></status>
+</kw>
+<kw name="Digitar login" library="resource">
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=/html/body/ion-app/ng-component/ion-nav/page-login/ion-content/div[2]/div[1]/ion-grid/ion-row[2]/ion-col/ion-list/ion-item[1]/div[1]/div/ion-input/input</arg>
+<arg>lucasdlg</arg>
+</arguments>
+<msg timestamp="20190117 08:50:05.639" level="INFO">Typing text 'lucasdlg' into text field 'xpath=/html/body/ion-app/ng-component/ion-nav/page-login/ion-content/div[2]/div[1]/ion-grid/ion-row[2]/ion-col/ion-list/ion-item[1]/div[1]/div/ion-input/input'</msg>
+<status status="PASS" starttime="20190117 08:50:05.637" endtime="20190117 08:50:07.880"></status>
+</kw>
+<status status="PASS" starttime="20190117 08:50:05.636" endtime="20190117 08:50:07.880"></status>
 </kw>
 <kw name="Fechar Aplicacao" library="resource" type="teardown">
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<msg timestamp="20190116 13:44:45.305" level="FAIL">No application is open</msg>
-<status status="FAIL" starttime="20190116 13:44:45.304" endtime="20190116 13:44:45.305"></status>
+<status status="PASS" starttime="20190117 08:50:07.882" endtime="20190117 08:50:11.650"></status>
 </kw>
-<status status="FAIL" starttime="20190116 13:44:45.303" endtime="20190116 13:44:45.306">No application is open</status>
+<status status="PASS" starttime="20190117 08:50:07.881" endtime="20190117 08:50:11.650"></status>
 </kw>
-<status status="FAIL" starttime="20190116 13:44:33.998" endtime="20190116 13:44:45.306" critical="yes">Setup failed:
-WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: 'Command 'C\:\\Users\\ldgomes\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s H7AZB602F881PR5 install C\:/Users/ldgomes/Desktop/Projetos/Robot_Framework_Study/Roche_Test_Appium/APK/roche.apk' exited with code 1'; Stderr: 'adb: failed to install C:/Users/ldgomes/Desktop/Projetos/Robot_Framework_Study/Roche_Test_Appium/APK/roche.apk: Failure [INSTALL_FAILED_CONFLICTING_PROVIDER: Package couldn't be installed in /data/app/br.com.roche.casosclinicos-dPAydFUdPxTrYsSCwdrwOw==: Can't install because provider name com.roche.stf.DocumentViewerPlugin.fileprovider (in package br.com.roche.casosclinicos) is already used by com.roche.stf]'; Code: '1'
-
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" starttime="20190117 08:49:41.567" endtime="20190117 08:50:11.651" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20190116 13:44:31.163" endtime="20190116 13:44:45.330"></status>
+<status status="PASS" starttime="20190117 08:49:39.552" endtime="20190117 08:50:11.656"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>
