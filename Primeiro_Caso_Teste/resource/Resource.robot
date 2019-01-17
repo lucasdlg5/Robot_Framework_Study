@@ -70,15 +70,40 @@ O sistema deve exibir a mensagem "${MENSAGEM_ALERTA}"
     Wait until Element Is Visible    xpath=//*[@id="center_column"]//p[@class='alert alert-warning']
     Element Text Should Be  xpath=//*[@id="center_column"]//p[@class='alert alert-warning']  ${MENSAGEM_ALERTA}
 
-Click botao "${TEXTO_BOTAO}"
-    Page Should Contain Element   ${TEXTO_BOTAO}
-    Click Button ${TEXTO_BOTAO}
+Clicar no botão "${TEXTO_BOTAO}" do produto
+    Page Should Contain Element   css=#center_column > ul > li > div
+    Mouse Over      css=#center_column > ul > li > div
+    Click Link     css=#center_column > ul > li > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default
 
 Uma tela de confirmação deve ser exibida
-    Wait until Element Is Visible   name=layer_cart
+    Wait until Element Is Visible   css=#layer_cart > div.clearfix > div.layer_cart_product.col-xs-12.col-md-6 > h2
     Page Should Contain Image       xpath=//*[@id="layer_cart"]//img[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]
-    Page Should Contain Button      xpath=//*[@id="layer_cart"]//span[contains(text(),"Proceed to checkout")]
+    # Page Should Contain Button      css=#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a
 
-Tela Carrinho
-    Wait until Element Is Visible  name=cart_title
-    Page should contain Element     xpath=//*[@id="cart_title"]/text()
+# Tela Carrinho
+#     Wait until Element Is Visible  name=cart_title
+#     Page should contain Element     xpath=//*[@id="cart_title"]/text()
+
+Passar o mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias.
+    Mouse Over  css=#block_top_menu > ul > li:nth-child(1) > a
+
+As sub categorias devem ser exibidas
+    Mouse Over  css=#block_top_menu > ul > li:nth-child(1) > a
+    Page should contain Element     css=#block_top_menu > ul > li:nth-child(1) > ul > li:nth-child(1) > a
+
+Clicar na sub categoria "${CATEGORIA}"
+    Mouse Over  css=#block_top_menu > ul > li:nth-child(1) > a
+    Wait Until Element Is Visible         css=#block_top_menu > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(3) > a 
+    Click Element   css=#block_top_menu > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(3) > a
+
+Uma página com os produtos da categoria selecionada deve ser exibida
+    Page should contain Element     xpath=//*[@id="center_column"]//span[contains(text(),"Summer Dresses")]
+
+Clicar no botão "Proceed to checkout"
+    Click Link  css=#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a
+
+A tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores.
+    # Page should contains Element    xpath=//*[@id="cart_title"][contains(text(),"Shopping-cart summary")]
+    Page should contain Element    xpath=//*[@id="cart_title"]/span
+    Page should contain Image    xpath=//*[@id="product_2_7_0_0"]//img[@src="http://automationpractice.com/img/p/7/7-small_default.jpg"]
+    Page should contain Element   xpath=//*[@id="total_price"][contains(text(),"$29.00")]

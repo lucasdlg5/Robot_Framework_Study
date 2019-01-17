@@ -1,3 +1,5 @@
+#robot -d .\Primeiro_Caso_Teste\results .\Primeiro_Caso_Teste\tests\Loja_E-commerce.robot
+#robot -t "Caso de uso 03 - Listar Produtos" -d .\Primeiro_Caso_Teste\results .\Primeiro_Caso_Teste\tests\Loja_E-commerce.robot
 ***Settings
 Library     SeleniumLibrary
 Resource  ../Resource/resource.robot
@@ -25,7 +27,7 @@ Caso de uso 03 - Listar Produtos
     Passar o mouse por cima da categoria "Women" no menu principal superior de categorias.
     As sub categorias devem ser exibidas
     Clicar na sub categoria "Summer Dresses"
-    Uma página com os produtos da categoria selecionada deve ser exibida.
+    Uma página com os produtos da categoria selecionada deve ser exibida
 
 Caso de uso 04 - Adicionar Produtos no Carrinho
     Acessar página home do site
@@ -59,11 +61,7 @@ Caso de uso 06 - Adicionar Cliente
 O sistema deve exibir a tela com o resultado da pesquisa, listando o produto pesquisado
     Conferir o produto "Blouse" foi listado no site
 
-Click botao "${TEXTO_BOTAO}"
-    Clicar no botão "${TEXTO_BOTAO}" do produto
 
-Click botao "${TEXTO_BOTAO}"
-    Clicar no botão "${TEXTO_BOTAO}"
 
-A tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores.
-    Tela Carrinho
+
+    
