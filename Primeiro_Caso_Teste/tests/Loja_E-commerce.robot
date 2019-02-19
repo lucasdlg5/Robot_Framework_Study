@@ -1,5 +1,24 @@
+#Instalar Robot (Ter instalado o Python Ver. 2.7)
+#pip install robotframework
+
+#Instalando Selenium Library para Web
+#pip install --upgrade robotframework-seleniumlibrary
+
+#Baixando Web Drivers (Sera quem reconhecerá quando for executado um teste automatizado)
+#http://chromedriver.chromium.org/downloads (Chrome)
+#https://github.com/mozilla/geckodriver/releases (Firefox)
+#https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ (Edge)
+
+#Apos baixado o Webdriver de preferencia, adicionar dentro da pasta de Scripts do Python dentro da pasta de instalação (somente o aplicativo executavel):
+#Ex.: C:\Users\LUCASDOMINGOSLEAOGOM\AppData\Local\Programs\Python\Python37-32\Scripts 
+
+#Executar o teste
+#Local de execução CMD: Pasta Primeiro_Caso_Teste
 #robot -d .\Primeiro_Caso_Teste\results .\Primeiro_Caso_Teste\tests\Loja_E-commerce.robot
+
+#Executando somente um teste
 #robot -t "Caso de uso 03 - Listar Produtos" -d .\Primeiro_Caso_Teste\results .\Primeiro_Caso_Teste\tests\Loja_E-commerce.robot
+
 ***Settings
 Library     SeleniumLibrary
 Resource  ../Resource/resource.robot
